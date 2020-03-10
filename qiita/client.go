@@ -10,16 +10,16 @@ type Client struct {
 	*http.Client
 }
 
-func NewClient() *Client {
+func NewClient(c *http.Client) *Client {
 	return &Client{
-		&http.Client{},
+		c,
 	}
 }
 
 type User struct {
 	// omit unused fields.
-	ID                string `json:"id"`
-	Location          string `json:"location"`
+	ID       string `json:"id"`
+	Location string `json:"location"`
 }
 
 func (c *Client) FetchUser(id string) (*User, error) {
