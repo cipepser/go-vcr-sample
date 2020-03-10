@@ -1,15 +1,13 @@
 package qiita
 
 import (
+	"github.com/dnaeon/go-vcr/recorder"
 	"net/http"
 	"reflect"
 	"testing"
 )
 
 func TestClient_FetchUser(t *testing.T) {
-	type fields struct {
-		Client *http.Client
-	}
 	type args struct {
 		id string
 	}
@@ -33,7 +31,13 @@ func TestClient_FetchUser(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			c := NewClient(http.DefaultClient)
+			r, err := recorder.New("../fixtures/qiita")
+			if err != nil {
+				t.Errorf("got err when constructs go-vcr recorder. error:%v\n", err)
+			}
+			defer r.Stop()
+
+			c := NewClient(&http.Client{Transport: r})
 			got, err := c.FetchUser(tt.args.id)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("FetchUser() error = %v, wantErr %v", err, tt.wantErr)

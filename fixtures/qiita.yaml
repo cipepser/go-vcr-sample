@@ -1,0 +1,52 @@
+---
+version: 1
+interactions:
+- request:
+    body: ""
+    form: {}
+    headers: {}
+    url: https://qiita.com/api/v2/users/cipepser
+    method: GET
+  response:
+    body: '{"description":"","facebook_id":"","followees_count":0,"followers_count":0,"github_login_name":"cipepser","id":"cipepser","items_count":0,"linkedin_id":"","location":"Tokyo,
+      Japan","name":"","organization":"","permanent_id":211421,"profile_image_url":"https://avatars3.githubusercontent.com/u/10915207?v=4","team_only":false,"twitter_screen_name":"cipepser","website_url":"http://cipepser.hatenablog.com/"}'
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 10 Mar 2020 06:04:39 GMT
+      Etag:
+      - W/"58b78f648a261f20d24dd648f1c30db2"
+      Rate-Limit:
+      - "60"
+      Rate-Remaining:
+      - "54"
+      Rate-Reset:
+      - "1583823155"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=2592000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 602fbf4c-50c9-458f-86fe-41a36e96112c
+      X-Runtime:
+      - "0.143591"
+      X-Xss-Protection:
+      - 1; mode=block
+    status: 200 OK
+    code: 200
+    duration: ""
